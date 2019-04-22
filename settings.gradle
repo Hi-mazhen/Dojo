@@ -5,23 +5,15 @@ pluginManagement {
 }
 
 
-
-
-
-
 rootProject.name = 'dojo'
 include 'dojo-api'
 include 'dojo-core'
 include 'dojo-mmybatis'
-
-
-
-
+include 'dojo-practise'
 
 
 rootProject.children.each {
     it.buildFileName = it.name + '.gradle'
 }
-
 
 
