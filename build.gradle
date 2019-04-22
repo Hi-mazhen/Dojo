@@ -1,0 +1,61 @@
+
+buildscript {
+    ext {
+        springBootVersion = '2.1.4.RELEASE'
+    }
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+allprojects {
+    group 'com.mzh'
+    version '1.0-SNAPSHOT'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'idea'
+    apply plugin: 'java'
+}
+
+
+// 子模块/项目的统一配置
+subprojects {
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java'
+    // 指定JDK版本
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    // 指定编码格式
+    [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        mavenCentral()
+        jcenter()
+    }
+    
+    ext {//依赖版本
+        springBootVersion = "2.1.4.RELEASE"
+    }
+    
+    dependencies {
+        compile("javax.servlet:javax.servlet-api:4.0.1")
+        compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+        
+
+        
+        testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+        testCompile("junit:junit:4.12")
+    }
+    
+    configurations {
+        //移除spring boot 默认logger依赖
+//        all*.exclude module: 'spring-boot-starter-logging'
+    }
+}
