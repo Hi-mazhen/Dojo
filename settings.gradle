@@ -3,12 +3,25 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
+
+
+
+
+
 rootProject.name = 'dojo'
 include 'dojo-api'
 include 'dojo-core'
+include 'dojo-mmybatis'
+
+
+
 
 
 
 rootProject.children.each {
     it.buildFileName = it.name + '.gradle'
 }
+
+
+
