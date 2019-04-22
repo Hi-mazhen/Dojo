@@ -9,8 +9,8 @@ rootProject.name = 'dojo'
 include 'dojo-api'
 include 'dojo-core'
 include 'dojo-mmybatis'
-include 'dojo-practise'
-
+include 'dojo-pattern'
+include 'dojo-mjmeter'
 
 rootProject.children.each {
     it.buildFileName = it.name + '.gradle'

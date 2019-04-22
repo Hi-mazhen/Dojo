@@ -47,8 +47,14 @@ subprojects {
     dependencies {
         compile("javax.servlet:javax.servlet-api:4.0.1")
         compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
-        
 
+        // lombok
+        compileOnly('org.projectlombok:lombok:1.18.4')
+        annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+
+        // spring boot 热部署
+        implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.1.4.RELEASE'
         
         testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
         testCompile("junit:junit:4.12")

@@ -1,0 +1,4 @@
+
+dependencies {
+    compile group: 'org.apache.jmeter', name: 'ApacheJMeter_java', version: '5.0'
+}
