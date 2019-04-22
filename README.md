@@ -13,5 +13,5 @@
 5. 修改dojo-api，dojo-core下dojo-api.gradle，dojo-core.gradle
 6. dojo-core新建hello包，新建HelloService，编写getName方法
 7. dojo-api新建HelloController,编写testControllerValidation接口，调用getName服务
-8. dojo-api新建启动类Application，启动工程，浏览器访问 http://localhost:8080/hello/test，显示"Hi, I'm xiaoma"
+8. dojo-api新建启动类Application，启动工程，浏览器访问 http://localhost:8080/hello/test 显示"Hi, I'm xiaoma"
 9. ok，多模块工程成功
