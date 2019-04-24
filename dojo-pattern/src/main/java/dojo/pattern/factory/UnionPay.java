@@ -18,9 +18,9 @@ package dojo.pattern.factory;
  * @create 2019-04-22
  * @since 1.0.0
  */
-public class UnionPay extends APay {
+public class UnionPay implements IPay {
     @Override
-    public String pay() {
-        return "union pay";
+    public void pay() {
+        System.out.println("union pay");
     }
 }

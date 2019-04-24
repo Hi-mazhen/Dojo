@@ -18,9 +18,10 @@ package dojo.pattern.factory;
  * @create 2019-04-22
  * @since 1.0.0
  */
-public class AliPay extends APay {
+public class AliPay implements IPay {
+
     @Override
-    public String pay() {
-        return "ali pay";
+    public void pay() {
+        System.out.println("ali pay");
     }
 }
