@@ -8,11 +8,11 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package dojo.pattern.factory.simple;
+package dojo.pattern.factory.simplefactory;
 
-import dojo.pattern.factory.AliPay;
-import dojo.pattern.factory.UnionPay;
-import dojo.pattern.factory.WechatPay;
+import dojo.pattern.factory.AliPayment;
+import dojo.pattern.factory.UnionPayment;
+import dojo.pattern.factory.WechatPayment;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -31,17 +31,19 @@ public class SimpleFactoryTest {
         // 缺点：
         // 1. 增加新的产品时需要修改工厂类的判断逻辑，违背开闭原则。
         // 2. 不易于扩展过于复杂的产品结构
-        // AliPay aPay = (AliPay) simpleFactory.getPay("ali");
+        // AliPayment aPay = (AliPayment) simpleFactory.create("ali");
         // aPay.pay();
 
-        AliPay aPay = (AliPay) simpleFactory.create("dojo.pattern.factory.AliPay");
+        AliPayment aPay = (AliPayment) simpleFactory.create("dojo.pattern.factory.AliPayment");
         aPay.pay();
 
-        WechatPay wechatPay = (WechatPay) simpleFactory.create(WechatPay.class);
+        WechatPayment wechatPay = (WechatPayment) simpleFactory.create(WechatPayment.class);
         wechatPay.pay();
 
-        UnionPay unionPay = (UnionPay) simpleFactory.create(UnionPay.class);
+        UnionPayment unionPay = (UnionPayment) simpleFactory.create(UnionPayment.class);
         unionPay.pay();
+
+//        LoggerFactory.getLogger("error");
 
     }
 }

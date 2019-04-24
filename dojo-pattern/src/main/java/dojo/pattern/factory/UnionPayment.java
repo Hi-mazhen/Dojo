@@ -1,6 +1,6 @@
 /**
  * Copyright (C), 2016-2019, 码农团
- * ClassName: UnionPay
+ * ClassName: UnionPayment
  * Author:   hthn
  * Date:     2019-04-22 21:18
  * Description:
@@ -18,7 +18,7 @@ package dojo.pattern.factory;
  * @create 2019-04-22
  * @since 1.0.0
  */
-public class UnionPay implements IPay {
+public class UnionPayment implements IPayment {
     @Override
     public void pay() {
         System.out.println("union pay");

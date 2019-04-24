@@ -8,10 +8,10 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package dojo.pattern.factory.normal;
+package dojo.pattern.factory.factorymethod;
 
-import dojo.pattern.factory.IPay;
-import dojo.pattern.factory.WechatPay;
+import dojo.pattern.factory.IPayment;
+import dojo.pattern.factory.WechatPayment;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -21,9 +21,9 @@ import dojo.pattern.factory.WechatPay;
  * @create 2019-04-24
  * @since 1.0.0
  */
-public class WechatPayFactory implements PayFactory {
+public class WechatPayFactory implements IPayFactory {
     @Override
-    public IPay getPay() {
-        return new WechatPay();
+    public IPayment create() {
+        return new WechatPayment();
     }
 }

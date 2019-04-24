@@ -8,9 +8,9 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package dojo.pattern.factory.simple;
+package dojo.pattern.factory.simplefactory;
 
-import dojo.pattern.factory.IPay;
+import dojo.pattern.factory.IPayment;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -23,26 +23,26 @@ import dojo.pattern.factory.IPay;
 public class SimpleFactory {
 
 
-    // public IPay getPay(String payName) {
+    // public IPayment create(String payName) {
     //
     //     if ("ali".equals(payName)) {
-    //         return new AliPay();
+    //         return new AliPayment();
     //     }
     //
     //     if ("wechat".equals(payName)) {
-    //         return new WechatPay();
+    //         return new WechatPayment();
     //     }
     //
     //     if ("union".equals(payName)) {
-    //         return new UnionPay();
+    //         return new UnionPayment();
     //     }
     //     return null;
     // }
 
-    public IPay create(String className) {
+    public IPayment create(String className) {
         try {
             if (!((null == className) || ("".equals(className)))) {
-                return (IPay) Class.forName(className).newInstance();
+                return (IPayment) Class.forName(className).newInstance();
             }
         } catch (Exception e) {
             e.getStackTrace();
@@ -50,7 +50,7 @@ public class SimpleFactory {
         return null;
     }
 
-    public IPay create(Class<? extends IPay> clazz) {
+    public IPayment create(Class<? extends IPayment> clazz) {
         try {
             if (null != clazz) {
                 return clazz.newInstance();

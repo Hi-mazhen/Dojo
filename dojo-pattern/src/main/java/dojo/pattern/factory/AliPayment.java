@@ -1,30 +1,27 @@
 /**
  * Copyright (C), 2016-2019, 码农团
- * ClassName: AliPayFactory
+ * ClassName: AliPayment
  * Author:   hthn
- * Date:     2019-04-24 16:43
+ * Date:     2019-04-22 21:01
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package dojo.pattern.factory.normal;
-
-import dojo.pattern.factory.AliPay;
-import dojo.pattern.factory.IPay;
+package dojo.pattern.factory;
 
 /**
  * 〈一句话功能简述〉<br> 
  * 〈〉
  *
  * @author hthn
- * @create 2019-04-24
+ * @create 2019-04-22
  * @since 1.0.0
  */
-public class AliPayFactory implements PayFactory {
+public class AliPayment implements IPayment {
 
     @Override
-    public IPay getPay() {
-        return new AliPay();
+    public void pay() {
+        System.out.println("ali pay");
     }
 }

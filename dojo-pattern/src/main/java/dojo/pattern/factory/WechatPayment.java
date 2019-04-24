@@ -1,8 +1,8 @@
 /**
  * Copyright (C), 2016-2019, 码农团
- * ClassName: AliPay
+ * ClassName: WechatPayment
  * Author:   hthn
- * Date:     2019-04-22 21:01
+ * Date:     2019-04-22 21:04
  * Description:
  * History:
  * <author>          <time>          <version>          <desc>
@@ -18,10 +18,9 @@ package dojo.pattern.factory;
  * @create 2019-04-22
  * @since 1.0.0
  */
-public class AliPay implements IPay {
-
+public class WechatPayment implements IPayment {
     @Override
     public void pay() {
-        System.out.println("ali pay");
+        System.out.println("wechat pay");
     }
 }
