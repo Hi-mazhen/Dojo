@@ -1,6 +1,6 @@
 
 buildscript {
-    ext {
+    ext{
         springBootVersion = '2.1.4.RELEASE'
     }
 
@@ -39,9 +39,9 @@ subprojects {
         mavenCentral()
         jcenter()
     }
-    
-    ext {//依赖版本
-        springBootVersion = "2.1.4.RELEASE"
+
+    ext{
+        springBootVersion = '2.1.4.RELEASE'
     }
     
     dependencies {
