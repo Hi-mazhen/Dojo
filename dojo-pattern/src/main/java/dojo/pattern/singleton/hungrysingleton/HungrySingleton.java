@@ -6,7 +6,7 @@ public class HungrySingleton {
     // 全局访问点
 
 
-//    private static final HungrySingleton hungrySingleton = new HungrySingleton();
+//    private simple final HungrySingleton hungrySingleton = new HungrySingleton();
 
     // 静态代码块方式
     private static final HungrySingleton hungrySingleton;
