@@ -40,7 +40,7 @@ public class MatchmakingProxy {
     //  Object    invoke(Object proxy, Method method, Object[] args)
     // 在代理实例上处理方法调用并返回结果。
 
-    public Object getProxyInstance () {
+    public Object getInstance() {
         return Proxy.newProxyInstance(
                 target.getClass().getClassLoader(),
                 target.getClass().getInterfaces(),

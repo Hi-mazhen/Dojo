@@ -11,6 +11,12 @@
 package dojo.pattern.proxy.dynamic;
 
 import dojo.pattern.proxy.IPerson;
+import dojo.pattern.proxy.dynamic.mdynamicproxy.MMatchmakingProxy;
+import sun.misc.ProxyGenerator;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -30,8 +36,32 @@ public class DynamicProxyTest {
     public static void main(String[] args) {
         IPerson target = new Man();
         System.out.println(target.getClass());
-        IPerson dProxy = (IPerson) new MatchmakingProxy(target).getProxyInstance();
-        System.out.println(dProxy.getClass());
-        dProxy.findLover();
+
+        // IPerson dProxy = (IPerson) new MatchmakingProxy(target).getInstance();
+        // System.out.println(dProxy.getClass());
+        // dProxy.findLover();
+        //
+        // JDK 动态代理
+        IPerson jProxy = (IPerson) new MatchmakingJDKProxy().getInstance(target);
+        System.out.println(jProxy.getClass());
+        jProxy.findLover();
+        // // 原理 jad 查
+        // byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{IPerson.class});
+        // try {
+        //     FileOutputStream os = new FileOutputStream("D:\\Jad 1.5.8g\\$Proxy0.class");
+        //     os.write(bytes);
+        //     os.close();
+        // } catch (FileNotFoundException e) {
+        //     e.printStackTrace();
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
+
+
+        // IPerson mProxy = (IPerson) new MMatchmakingProxy().getInstance(target);
+        // System.out.println(mProxy.getClass());
+        // mProxy.findLover();
+
+
     }
 }
