@@ -12,6 +12,7 @@ package dojo.pattern.proxy.dynamic.mdynamicproxy;
 
 import dojo.pattern.proxy.IPerson;
 
+import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -26,7 +27,7 @@ import java.lang.reflect.Method;
 public class MMatchmakingProxy implements MInvocationHandler {
     private IPerson target;
 
-    public Object getInstance (IPerson target) {
+    public Object getInstance (IPerson target) throws IllegalAccessException, IOException, InstantiationException, NoSuchMethodException, InvocationTargetException, ClassNotFoundException {
         this.target = target;
         Class<?> clazz = target.getClass();
         return MProxy.newProxyInstance(new MClassLoader(), clazz.getInterfaces(), this);

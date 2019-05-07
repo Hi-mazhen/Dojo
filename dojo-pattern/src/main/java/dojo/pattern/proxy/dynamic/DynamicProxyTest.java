@@ -17,6 +17,7 @@ import sun.misc.ProxyGenerator;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * 〈一句话功能简述〉<br> 
@@ -33,7 +34,7 @@ public class DynamicProxyTest {
     // 代理对象MatchmakingProxy不需要实现接口,需要完成getProxyInstance
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, InvocationTargetException, IOException, InstantiationException, NoSuchMethodException, ClassNotFoundException {
         IPerson target = new Man();
         System.out.println(target.getClass());
 
@@ -42,9 +43,9 @@ public class DynamicProxyTest {
         // dProxy.findLover();
         //
         // JDK 动态代理
-        IPerson jProxy = (IPerson) new MatchmakingJDKProxy().getInstance(target);
-        System.out.println(jProxy.getClass());
-        jProxy.findLover();
+        // IPerson jProxy = (IPerson) new MatchmakingJDKProxy().getInstance(target);
+        // System.out.println(jProxy.getClass());
+        // jProxy.findLover();
         // // 原理 jad 查
         // byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy0", new Class[]{IPerson.class});
         // try {
@@ -58,9 +59,9 @@ public class DynamicProxyTest {
         // }
 
 
-        // IPerson mProxy = (IPerson) new MMatchmakingProxy().getInstance(target);
-        // System.out.println(mProxy.getClass());
-        // mProxy.findLover();
+        IPerson mProxy = (IPerson) new MMatchmakingProxy().getInstance(target);
+        System.out.println(mProxy.getClass());
+        mProxy.findLover();
 
 
     }
