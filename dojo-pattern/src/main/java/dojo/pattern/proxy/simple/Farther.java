@@ -21,9 +21,9 @@ import dojo.pattern.proxy.IPerson;
  * @since 1.0.0
  */
 public class Farther implements IPerson {
-    private IPerson target;
+    private Son target;
 
-    public Farther(IPerson target) {
+    public Farther(Son target) {
         this.target = target;
     }
 

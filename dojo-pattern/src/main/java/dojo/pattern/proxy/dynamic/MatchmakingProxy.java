@@ -50,7 +50,7 @@ public class MatchmakingProxy {
                         before();
                         Object ret = method.invoke(target, args);
                         after();
-                        return null;
+                        return ret;
                     }
                 });
     }

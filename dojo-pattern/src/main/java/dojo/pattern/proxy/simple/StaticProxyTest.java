@@ -28,7 +28,7 @@ public class StaticProxyTest {
 
     public static void main(String[] args) {
         // 目标对象
-        IPerson target = new Son();
+        Son target = new Son();
         // 代理对象
         Farther farther = new Farther(target);
         farther.findLover();
